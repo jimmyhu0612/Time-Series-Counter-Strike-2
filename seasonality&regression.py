@@ -26,7 +26,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 sns.set(context='paper', font_scale=1, style='dark')
-#%% #to know the encoding of xlsx file
+#to know the encoding of xlsx file
 '''
 import pandas as pd
 import chardet
@@ -36,14 +36,10 @@ with open('C:/Users/jimmyhu/Desktop/研究所_行銷/112-2/時間序列分析/on
 
 df = pd.read_csv('C:/Users/jimmyhu/Desktop/研究所_行銷/112-2/時間序列分析/onlyCSGOdata_utf8.csv', encoding=result['encoding'])
 '''
-#%%
 df = pd.read_csv('C:/Users/jimmyhu/Desktop/研究所_行銷/112-2/時間序列分析/onlyCSGOdata_utf8.csv')
 # Change the column name into lowercase
 df.columns = df.columns.str.lower()
 print(df.info())
-#%%
-#missing value使用Moving Average解決，但程式寫不出來所以用手動計算
-#%%
 # rename columns
 df = df.rename(columns={'month': 'time',
                        'avg. players': 'avg_players',
